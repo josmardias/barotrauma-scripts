@@ -1,4 +1,3 @@
-import * as items from './const.js'
 import { db } from './db.js'
 
 // const target = [
@@ -30,12 +29,6 @@ import { db } from './db.js'
 //   { amount: 8, id: items.ANTIRAD },
 // ]
 
-const shopList = [
-  //
-  { amount: 16, id: items.TONIC_LIQUID },
-  { amount: 4, id: items.CALYXANIDE },
-]
-
 const itemBasicResources = (id, amount) => {
   const item = db[id]
 
@@ -52,26 +45,15 @@ const itemBasicResources = (id, amount) => {
     }, {})
 }
 
-const sortObj = (obj) => {
-  return Object.fromEntries(
-    Object.entries(obj).sort(([a], [b]) => a.localeCompare(b)),
-  )
-}
+export const toBasicResources = (list) =>
+  Object.entries(
+    list.reduce((acc, item) => {
+      const res = itemBasicResources(item.id, item.amount)
 
-const total = shopList.reduce((acc, item) => {
-  const res = itemBasicResources(item.id, item.amount)
+      for (let id of Object.keys(res)) {
+        acc[id] = (acc[id] || 0) + res[id]
+      }
 
-  for (let id of Object.keys(res)) {
-    acc[id] = (acc[id] || 0) + res[id]
-  }
-
-  return acc
-}, {})
-
-console.log('crating list')
-console.log(shopList)
-
-console.log()
-
-console.log('shop list')
-console.log(sortObj(total))
+      return acc
+    }, {}),
+  ).map(([id, amount]) => ({ id, amount }))

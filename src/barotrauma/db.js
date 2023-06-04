@@ -1,7 +1,9 @@
 import * as items from './const.js'
 
-export const db = {
-  [items.TONIC_LIQUID]: {
+export const dbList = [
+  {
+    id: items.TONIC_LIQUID,
+    name: 'Tonic Liquid',
     yield: 2,
     recipe: [
       { amount: 3, id: items.CALCIUM },
@@ -9,11 +11,15 @@ export const db = {
       { amount: 3, id: items.ZINC },
     ],
   },
-  [items.MORPHINE]: {
+  {
+    id: items.MORPHINE,
+    name: 'Morphine',
     yield: 1,
     recipe: [{ amount: 2, id: items.OPIUM }],
   },
-  [items.BLOOD_PACK]: {
+  {
+    id: items.BLOOD_PACK,
+    name: 'Blood Pack',
     yield: 2,
     recipe: [
       { amount: 2, id: items.ALIEN_BLOOD },
@@ -21,25 +27,33 @@ export const db = {
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.SALINE]: {
+  {
+    id: items.SALINE,
+    name: 'Saline',
     yield: 2,
     recipe: [
       { amount: 2, id: items.CHLORINE },
       { amount: 1, id: items.SODIUM },
     ],
   },
-  [items.BANDAGE]: {
+  {
+    id: items.BANDAGE,
+    name: 'Bandage',
     yield: 2,
     recipe: [{ amount: 1, id: items.ORGANIC_FIBER }],
   },
-  [items.PLASTISEAL]: {
+  {
+    id: items.PLASTISEAL,
+    name: 'Plastiseal',
     yield: 3,
     recipe: [
       { amount: 3, id: items.BANDAGE },
       { amount: 1, id: items.ELASTIN },
     ],
   },
-  [items.FENTANYL]: {
+  {
+    id: items.FENTANYL,
+    name: 'Fentanyl',
     yield: 1,
     recipe: [
       { amount: 1, id: items.MORPHINE },
@@ -47,7 +61,9 @@ export const db = {
       { amount: 1, id: items.ETHANOL },
     ],
   },
-  [items.METHAMPHETAMINE]: {
+  {
+    id: items.METHAMPHETAMINE,
+    name: 'Methamphetamine',
     yield: 1,
     recipe: [
       { amount: 1, id: items.PHOSPHORUS },
@@ -55,35 +71,45 @@ export const db = {
       { amount: 2, id: items.CARBON },
     ],
   },
-  [items.ANABOLIC_STEROID]: {
+  {
+    id: items.ANABOLIC_STEROID,
+    name: 'Anabolic_Steroids',
     yield: 1,
     recipe: [
       { amount: 1, id: items.TONIC_LIQUID },
       { amount: 1, id: items.FENTANYL },
     ],
   },
-  [items.HYPERZINE]: {
+  {
+    id: items.HYPERZINE,
+    name: 'Hyperzine',
     yield: 1,
     recipe: [
       { amount: 1, id: items.METHAMPHETAMINE },
       { amount: 1, id: items.ANABOLIC_STEROID },
     ],
   },
-  [items.COMBAT_STIMULANT]: {
+  {
+    id: items.COMBAT_STIMULANT,
+    name: 'Combat_Stimulant',
     yield: 1,
     recipe: [
       { amount: 1, id: items.SULPHURITE_SHARD },
       { amount: 1, id: items.MORPHINE },
     ],
   },
-  [items.CALYX_EXTRACT]: {
+  {
+    id: items.CALYX_EXTRACT,
+    name: 'Calyx Extract',
     yield: 1,
     recipe: [
       { amount: 1, id: items.VELONACEPS_CALYS_EGGS },
       { amount: 1, id: items.CALCIUM },
     ],
   },
-  [items.CALYXANIDE]: {
+  {
+    id: items.CALYXANIDE,
+    name: 'Calyxanide',
     yield: 1,
     recipe: [
       { amount: 1, id: items.CALYX_EXTRACT },
@@ -91,28 +117,36 @@ export const db = {
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.CHLORAL_HYDRATE]: {
+  {
+    id: items.CHLORAL_HYDRATE,
+    name: 'Chloral Hydrate',
     yield: 1,
     recipe: [
       { amount: 2, id: items.CHLORINE },
       { amount: 1, id: items.ETHANOL },
     ],
   },
-  [items.PARALYZANT]: {
+  {
+    id: items.PARALYZANT,
+    name: 'Paralyzant',
     yield: 1,
     recipe: [
       { amount: 1, id: items.CHLORAL_HYDRATE },
       { amount: 1, id: items.PARALYXIS },
     ],
   },
-  [items.ANAPARALYZANT]: {
+  {
+    id: items.ANAPARALYZANT,
+    name: 'Anaparalyzant',
     yield: 1,
     recipe: [
       { amount: 1, id: items.PARALYZANT },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.HALOPERIDOL]: {
+  {
+    id: items.HALOPERIDOL,
+    name: 'Haloperidol',
     yield: 1,
     recipe: [
       { amount: 1, id: items.LITHIUM },
@@ -120,28 +154,36 @@ export const db = {
       { amount: 2, id: items.CHLORINE },
     ],
   },
-  [items.NALOXONE]: {
+  {
+    id: items.NALOXONE,
+    name: 'Naloxone',
     yield: 1,
     recipe: [
       { amount: 1, id: items.MORPHINE },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.DELIRIUMINE]: {
+  {
+    id: items.DELIRIUMINE,
+    name: 'Deliriumine',
     yield: 2,
     recipe: [
       { amount: 1, id: items.DEMENTONITE_BAR },
       { amount: 1, id: items.ETHANOL },
     ],
   },
-  [items.DELIRIUMINE_ANTIDOTE]: {
+  {
+    id: items.DELIRIUMINE_ANTIDOTE,
+    name: 'Deliriumine Antidote',
     yield: 1,
     recipe: [
       { amount: 1, id: items.DELIRIUMINE },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.MORBUSINE]: {
+  {
+    id: items.MORBUSINE,
+    name: 'Morbusine',
     yield: 1,
     recipe: [
       { amount: 2, id: items.CHLORINE },
@@ -149,53 +191,69 @@ export const db = {
       { amount: 1, id: items.SULPHURIC_ACID },
     ],
   },
-  [items.MORBUSINE_ANTIDOTE]: {
+  {
+    id: items.MORBUSINE_ANTIDOTE,
+    name: 'Morbusine Antidote',
     yield: 1,
     recipe: [
       { amount: 1, id: items.MORBUSINE },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.CYANIDE]: {
+  {
+    id: items.CYANIDE,
+    name: 'Cyanide',
     yield: 1,
     recipe: [
       { amount: 1, id: items.CHLORAL_HYDRATE },
       { amount: 3, id: items.SODIUM },
     ],
   },
-  [items.CYANIDE_ANTIDOTE]: {
+  {
+    id: items.CYANIDE_ANTIDOTE,
+    name: 'Cyanide Antidote',
     yield: 1,
     recipe: [
       { amount: 1, id: items.CYANIDE },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.SUFFORIN]: {
+  {
+    id: items.SUFFORIN,
+    name: 'Sufforin',
     yield: 1,
     recipe: [
       { amount: 1, id: items.SULPHURIC_ACID },
       { amount: 1, id: items.POTASSIUM },
     ],
   },
-  [items.SUFFORIN_ANTIDOTE]: {
+  {
+    id: items.SUFFORIN_ANTIDOTE,
+    name: 'Sufforin Antidote',
     yield: 1,
     recipe: [
       { amount: 1, id: items.SUFFORIN },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-  [items.RADIOTOXIN]: {
+  {
+    id: items.RADIOTOXIN,
+    name: 'Radiotoxin',
     yield: 1,
     recipe: [
       { amount: 1, id: items.THORIUM },
       { amount: 2, id: items.URANIUM },
     ],
   },
-  [items.ANTIRAD]: {
+  {
+    id: items.ANTIRAD,
+    name: 'Antirad',
     yield: 1,
     recipe: [
       { amount: 1, id: items.RADIOTOXIN },
       { amount: 1, id: items.STABILOZINE },
     ],
   },
-}
+]
+
+export const db = Object.fromEntries(dbList.map((item) => [item.id, item]))
