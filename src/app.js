@@ -1,4 +1,4 @@
-import { useMap } from 'react-use'
+import { useLocalStorage } from 'react-use'
 import Select from 'react-select'
 import { toBasicResources } from './barotrauma/util.js'
 import { dbList, db } from './barotrauma/db.js'
@@ -11,7 +11,21 @@ const itemUtil = {
 }
 
 export const App = () => {
-  const [map, { set, remove, reset }] = useMap()
+  const [map, _set] = useLocalStorage('map', {})
+
+  const set = (id, value) => {
+    map[id] = value
+    _set(map)
+  }
+
+  const remove = (id, value) => {
+    delete map[id]
+    _set(map)
+  }
+
+  const reset = (id, value) => {
+    _set({})
+  }
 
   const onChange = (selected) => {
     if (!selected) return
