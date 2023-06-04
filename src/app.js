@@ -11,7 +11,7 @@ const itemUtil = {
 }
 
 export const App = () => {
-  const [map, { set, remove }] = useMap()
+  const [map, { set, remove, reset }] = useMap()
 
   const onChange = (selected) => {
     if (!selected) return
@@ -35,6 +35,12 @@ export const App = () => {
     set(id, 0)
   }
 
+  const onClear = (id) => {
+    const b = confirm('Are you sure?')
+    if (!b) return
+    reset()
+  }
+
   const list = Object.entries(map).map(([id, amount]) => ({ id, amount }))
 
   const shopList = toBasicResources(list)
@@ -42,7 +48,7 @@ export const App = () => {
   return (
     <div>
       <label>
-        Item to be crafted
+        Item:
         <Select
           name="query"
           onChange={onChange}
@@ -53,7 +59,9 @@ export const App = () => {
         />
       </label>
       <div>
-        <h2>Crafting list</h2>
+        <h2>
+          Crafting list <button onClick={onClear}>Clear</button>
+        </h2>
         {list.length ? (
           list.map(({ id, amount }) => (
             <div key={id}>
