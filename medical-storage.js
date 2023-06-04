@@ -3,7 +3,7 @@ import { db } from './db.js'
 
 const storage = [
   // just for the sake of it
-  { amount: 8, id: items.ANTIBIOTIC_GLUE },
+  { amount: 4, id: items.ANTIBIOTIC_GLUE },
   // low treatment
   { amount: 8, id: items.STABILOZINE },
   { amount: 8, id: items.ETHANOL },
@@ -15,18 +15,18 @@ const storage = [
   { amount: 16, id: items.MORPHINE },
   { amount: 16, id: items.BLOOD_PACK },
   // advanced
-  { amount: 8, id: items.HYPERZINE },
-  { amount: 8, id: items.COMBAT_STIMULANT },
-  { amount: 8, id: items.FENTANYL },
-  { amount: 8, id: items.CALYXANIDE },
+  { amount: 4, id: items.HYPERZINE },
+  { amount: 4, id: items.COMBAT_STIMULANT },
+  { amount: 4, id: items.FENTANYL },
+  { amount: 4, id: items.CALYXANIDE },
   { amount: 8, id: items.ANAPARALYZANT },
   // antidotes
-  { amount: 8, id: items.HALOPERIDOL },
-  { amount: 8, id: items.NALOXONE },
-  { amount: 8, id: items.DELIRIUMINE_ANTIDOTE },
-  { amount: 8, id: items.MORBUSINE_ANTIDOTE },
-  { amount: 8, id: items.CYANIDE_ANTIDOTE },
-  { amount: 8, id: items.SUFFORIN_ANTIDOTE },
+  { amount: 4, id: items.HALOPERIDOL },
+  { amount: 4, id: items.NALOXONE },
+  { amount: 4, id: items.DELIRIUMINE_ANTIDOTE },
+  { amount: 4, id: items.MORBUSINE_ANTIDOTE },
+  { amount: 4, id: items.CYANIDE_ANTIDOTE },
+  { amount: 4, id: items.SUFFORIN_ANTIDOTE },
   { amount: 8, id: items.ANTIRAD },
 ]
 
