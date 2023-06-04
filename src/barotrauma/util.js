@@ -32,7 +32,7 @@ import { db } from './db.js'
 const itemBasicResources = (id, amount) => {
   const item = db[id]
 
-  if (!item) return { [id]: amount }
+  if (!item || !item.recipe) return { [id]: amount }
 
   return item.recipe
     .map((i) => itemBasicResources(i.id, i.amount))
