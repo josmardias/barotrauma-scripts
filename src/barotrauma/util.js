@@ -48,6 +48,8 @@ const itemBasicResources = (id, amount) => {
 export const toBasicResources = (list) =>
   Object.entries(
     list.reduce((acc, item) => {
+      if (!item.amount) return acc
+
       const res = itemBasicResources(item.id, item.amount)
 
       for (let id of Object.keys(res)) {

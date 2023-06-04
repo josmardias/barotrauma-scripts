@@ -1,7 +1,7 @@
 import { useMap } from 'react-use'
 import Select from 'react-select'
 import { toBasicResources } from './barotrauma/util.js'
-import { dbList } from './barotrauma/db.js'
+import { dbList, db } from './barotrauma/db.js'
 
 const itemUtil = {
   eq: (a, b) => a.id === b.id,
@@ -27,8 +27,12 @@ export const App = () => {
     set(id, Math.max((map[id] || 0) - 1, 0))
   }
 
-  onRemove = (id) => {
+  const onRemove = (id) => {
     remove(id)
+  }
+
+  const onReset = (id) => {
+    set(id, 0)
   }
 
   const list = Object.entries(map).map(([id, amount]) => ({ id, amount }))
@@ -53,9 +57,14 @@ export const App = () => {
         {list.length ? (
           list.map(({ id, amount }) => (
             <div key={id}>
-              <button onClick={() => onRemove(id)}>x</button>
-              {amount}x {id} <button onClick={() => onDecrement(id)}>-</button>
+              <button onClick={() => onReset(id)}>0*</button>{' '}
+              <button onClick={() => onDecrement(id)}>-</button>{' '}
               <button onClick={() => onIncrement(id)}>+</button>
+              <span>
+                {' '}
+                {amount}x {db[id].name}{' '}
+              </span>
+              <button onClick={() => onRemove(id)}>x</button>
             </div>
           ))
         ) : (
@@ -67,7 +76,7 @@ export const App = () => {
         {shopList.length ? (
           shopList.map(({ id, amount }) => (
             <div key={id}>
-              {amount}x {id}
+              {amount}x {db[id].name}
             </div>
           ))
         ) : (
