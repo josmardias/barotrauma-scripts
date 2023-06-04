@@ -11,12 +11,24 @@ const itemUtil = {
 }
 
 export const App = () => {
-  const [map, { set }] = useMap()
+  const [map, { set, remove }] = useMap()
 
   const onChange = (selected) => {
     if (!selected) return
     const id = selected.id
     set(id, (map[id] || 0) + 1)
+  }
+
+  const onIncrement = (id) => {
+    set(id, (map[id] || 0) + 1)
+  }
+
+  const onDecrement = (id) => {
+    set(id, Math.max((map[id] || 0) - 1, 0))
+  }
+
+  onRemove = (id) => {
+    remove(id)
   }
 
   const list = Object.entries(map).map(([id, amount]) => ({ id, amount }))
@@ -41,7 +53,9 @@ export const App = () => {
         {list.length ? (
           list.map(({ id, amount }) => (
             <div key={id}>
-              {amount}x {id}
+              <button onClick={() => onRemove(id)}>x</button>
+              {amount}x {id} <button onClick={() => onDecrement(id)}>-</button>
+              <button onClick={() => onIncrement(id)}>+</button>
             </div>
           ))
         ) : (
