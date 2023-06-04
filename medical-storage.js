@@ -30,8 +30,10 @@ import { db } from './db.js'
 //   { amount: 8, id: items.ANTIRAD },
 // ]
 
-const shopList = [ //
-  { amount: 16, id: items.TONIC_LIQUID }
+const shopList = [
+  //
+  { amount: 16, id: items.TONIC_LIQUID },
+  { amount: 4, id: items.CALYXANIDE },
 ]
 
 const itemBasicResources = (id, amount) => {
@@ -66,4 +68,10 @@ const total = shopList.reduce((acc, item) => {
   return acc
 }, {})
 
+console.log('crating list')
+console.log(shopList)
+
+console.log()
+
+console.log('shop list')
 console.log(sortObj(total))
