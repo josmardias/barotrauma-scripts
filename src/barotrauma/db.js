@@ -98,7 +98,7 @@ export const dbList = [
   },
   {
     id: items.ANABOLIC_STEROID,
-    name: 'Anabolic_Steroids',
+    name: 'Anabolic Steroids',
     yield: 1,
     recipe: [
       { amount: 1, id: items.TONIC_LIQUID },
@@ -116,7 +116,7 @@ export const dbList = [
   },
   {
     id: items.COMBAT_STIMULANT,
-    name: 'Combat_Stimulant',
+    name: 'Combat Stimulant',
     yield: 1,
     recipe: [
       { amount: 1, id: items.SULPHURITE_SHARD },
