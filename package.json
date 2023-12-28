@@ -4,7 +4,7 @@
     "start": "parcel src/index.html"
   },
   "dependencies": {
-    "parcel": "^2.9.1",
+    "parcel": "^2.10.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.3",
